@@ -8,6 +8,9 @@
     let valorLitro = parseFloat(prompt("Digite o valor do litro (R$):"));
     let quantidadeLitros = parseFloat(prompt("Digite a quantidade de litros abastecidos:"));
 
+    let valorTotal = valorLitro * quantidadeLitros;
+    let valorImposto = valorTotal * 0.25;
+
     let dataAtual = new Date();
     let dataHoraFormatada = dataAtual.toLocaleString('pt-BR');
 
@@ -17,7 +20,7 @@
             <p><strong>Data e Hora do abastecimento:</strong> ${dataHoraFormatada}</p>
             <p><strong>Modelo do Veículo:</strong> ${modelo}</p>
             <p><strong>Placa do Veículo:</strong> ${placa}</p>
-            <p><strong>Tipo do Combustível:</strong> ${tipoCombustivel.toUpperCase()}</p>
+            <p><strong>Tipo do Combustível:</strong> ${combustivel.toUpperCase()}</p>
             <p><strong>Valor do Litro:</strong> R$ ${valorLitro.toFixed(2)}</p>
             <p><strong>Quantidade de litros abastecidos:</strong> ${quantidadeLitros.toFixed(2)} L</p>
             <p><strong>Valor Total a Pagar:</strong> R$ ${valorTotal.toFixed(2)}</p>
@@ -26,5 +29,6 @@
         </div>
     `;
 
-    
+    document.getElementById("relatorio").innerHTML = relatorioHTML;
+
  }
